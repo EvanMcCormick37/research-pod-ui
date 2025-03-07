@@ -2,22 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+To get started with the project and run these scripts, download the latest version of node.js, which will come with Node Package Manager. I just realized that my __modules__ folder is outside of this Repo, so I'm not sure that these scripts will just run in any clone of this repo.
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+~~Launches the test runner in the interactive watch mode.~~
+I altered this to run tests with Jest, and Babel for .js translation. If you can run this command without errors, then it means you've got everything installed and working properly.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Jest documentation](https://jestjs.io/)
+
+### `npm run deploy`
+
+Compiles the application into static .html files in the gh-pages branch, the pushes gh-pages to GitHub, for GitHub Pages deployment. This is how I'm hosting the page for now.
 
 ### `npm run build`
 
@@ -28,10 +28,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run deploy`
-
-Compiles the application into static .html files in the gh-pages branch, the pushes gh-pages to GitHub, for GitHub Pages deployment.
 
 ### `npm run eject`
 
