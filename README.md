@@ -1,3 +1,18 @@
+### AI Research Podcast Generator and Browser
+
+This is the UI for a project which allows users to Generate Research podcasts using the latest AI models, and browse/search stored podcasts.
+
+## What Can Users do with this UI?
+
+1. Generate new AI podcasts
+2. Browse existing podcasts
+3. Look at recommended podcasts
+4. Listen to all podcasts, newly generated or pre-existing
+5. Generate modified versions of existing podcasts.
+6. Retrieve previously viewed podcasts, along with their current watch-state.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
