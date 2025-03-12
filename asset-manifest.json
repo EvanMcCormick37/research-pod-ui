@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/EvanMcCormick37/research-pod-ui/static/css/main.51a99ada.css",
-    "main.js": "/EvanMcCormick37/research-pod-ui/static/js/main.09b47f38.js",
-    "static/js/453.d416804d.chunk.js": "/EvanMcCormick37/research-pod-ui/static/js/453.d416804d.chunk.js",
-    "index.html": "/EvanMcCormick37/research-pod-ui/index.html",
-    "main.51a99ada.css.map": "/EvanMcCormick37/research-pod-ui/static/css/main.51a99ada.css.map",
-    "main.09b47f38.js.map": "/EvanMcCormick37/research-pod-ui/static/js/main.09b47f38.js.map",
-    "453.d416804d.chunk.js.map": "/EvanMcCormick37/research-pod-ui/static/js/453.d416804d.chunk.js.map"
+    "main.css": "/research-pod-ui/static/css/main.51a99ada.css",
+    "main.js": "/research-pod-ui/static/js/main.880c84e3.js",
+    "static/js/453.d416804d.chunk.js": "/research-pod-ui/static/js/453.d416804d.chunk.js",
+    "index.html": "/research-pod-ui/index.html",
+    "main.51a99ada.css.map": "/research-pod-ui/static/css/main.51a99ada.css.map",
+    "main.880c84e3.js.map": "/research-pod-ui/static/js/main.880c84e3.js.map",
+    "453.d416804d.chunk.js.map": "/research-pod-ui/static/js/453.d416804d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.51a99ada.css",
-    "static/js/main.09b47f38.js"
+    "static/js/main.880c84e3.js"
   ]
 }
