@@ -11,7 +11,17 @@ This is the UI for a project which allows users to Generate Research podcasts us
 5. Generate modified versions of existing podcasts.
 6. Retrieve previously viewed podcasts, along with their current watch-state.
 
+## Pages
 
+# Home
+
+# Watch
+
+# Browse
+
+# Navigation Sidebar
+
+# Recommender Sidebar
 
 # Getting Started with Create React App
 
