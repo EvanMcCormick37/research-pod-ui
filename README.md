@@ -14,14 +14,17 @@ This is the UI for a project which allows users to Generate Research podcasts us
 ## Pages
 
 # Home
-
+This page has a button to generate new podcasts with a text prompt, along with a search-bar for searching existing podcasts. 
+TODO: The Generate Podcast button will hook up to the reasearch-pod-api backend and send out an API request.
 # Watch
-
+TODO: The user will navigate to this page when they click on a podcast to play it. It will display the podcast similarly to something like spotify, with a time-scroll bar to move through the podcast, FF and rewind buttons, and a pause/play button. It will also display real-time captions of the podcast.
 # Browse
-
+This page displays the previously generated podcast. There will be a list of podcasts with play buttons.
+TODO: Clicking on the pre-generated podcast takes the user to the Watch page. There are buttons to organizethe podcasts in various ways. There are filter options for date created, user who created them, and of course a working search-bar to filter on keywords. Each podcast will have a set of pre-generated tags which attach to the keyword search.
 # Navigation Sidebar
-
+There will be a sidebar in each page which leads the user back to the Generate and Browse pages.
 # Recommender Sidebar
+TODO: There will be a sidebar showing recommended podcasts based on the podcast the user is currently watching as well as their prior search history.
 
 # Getting Started with Create React App
 
