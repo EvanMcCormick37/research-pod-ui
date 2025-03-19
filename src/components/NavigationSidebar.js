@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as useLocation } from 'react-router-dom';
-import './App.css';
+import '../App.css';
 
 const NavigationSidebar = () => {
     const location = useLocation();

@@ -40,7 +40,7 @@ const EventStreamListener = ({ url, onStatusUpdate, onPapersUpdate, onAnalysisUp
 
         return () => {
             eventSource.close();
-            setIsConnected(false);
+            setConnected(false);
         };
     }, [url, onStatusUpdate, onPapersUpdate, onAnalysisUpdate, onError]);
     

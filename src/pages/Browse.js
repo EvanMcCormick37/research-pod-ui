@@ -10,10 +10,10 @@ function Browse() {
   
   // Load podcasts from local storage when component mounts
   useEffect(() => {
-    const loadPodcasts = () => {
+    const loadPodcasts = async () => {
         setIsLoading(true);
       try {
-        wait(1000); // Simulate a delay for loading podcasts
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate a delay for loading podcasts
         // Mock podcast data
         const formattedPodcasts = () => [
           { id: 1, title: 'The Future of AI', duration: '25:43', date: '2025-03-05' },
