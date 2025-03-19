@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import apiService from '../services/apiService';
 
-function Home() {
+function Create() {
   const [query, setQuery] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState('');
@@ -68,4 +68,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Create;
