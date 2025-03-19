@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import apiService from '../services/apiService';
-import podcastHistoryService from '../services/podcastHistoryService';
 
 function Play() {
   const { jobId } = useParams();
@@ -22,63 +21,26 @@ function Play() {
       try {
         setIsLoading(true);
         
-        // Check if we have this podcast in history
-        const history = podcastHistoryService.getHistory();
-        const existingPodcast = history.find(item => item.jobId === jobId);
+        // Fetch podcast data directly from API
+        const result = await apiService.checkStatus(jobId);
         
-        // If we have it in history, use that data
-        if (existingPodcast) {
+        if (result.status === 'COMPLETED') {
           setPodcast({
-            id: existingPodcast.jobId,
-            title: existingPodcast.query || 'Untitled Podcast',
-            // In a real implementation, you'd store the URLs in history
+            id: jobId,
+            title: result.query || 'Untitled Podcast',
             audioUrl: `/v1/api/podcast/${jobId}/audio`,
-            transcriptUrl: `/v1/api/podcast/${jobId}/transcript`,
-            lastPosition: existingPodcast.PlayPosition || 0
+            transcriptUrl: `/v1/api/podcast/${jobId}/transcript`
           });
           
-          // If we have a transcript stored, use it
-          if (existingPodcast.transcript) {
-            setTranscript(existingPodcast.transcript);
-          } else {
-            // Otherwise we'd fetch it from the API
-            // This is a mock transcript for demonstration
-            setTranscript([
-              { time: 0, text: "Welcome to this AI generated podcast." },
-              { time: 5, text: "Today we're exploring the topic you requested." },
-              { time: 10, text: "Let's dive into the details." }
-            ]);
-          }
+          // In a real implementation, you'd fetch the transcript from the API
+          // For now using mock data
+          setTranscript([
+            { time: 0, text: "Welcome to this AI generated podcast." },
+            { time: 5, text: "Today we're exploring the topic you requested." },
+            { time: 10, text: "Let's dive into the details." }
+          ]);
         } else {
-          // Otherwise fetch from API
-          const result = await apiService.checkStatus(jobId);
-          
-          if (result.status === 'COMPLETED') {
-            setPodcast({
-              id: jobId,
-              title: result.query || 'Untitled Podcast',
-              audioUrl: `/v1/api/podcast/${jobId}/audio`,
-              transcriptUrl: `/v1/api/podcast/${jobId}/transcript`,
-              lastPosition: 0
-            });
-            
-            // In a real implementation, you'd fetch the transcript from the API
-            setTranscript([
-              { time: 0, text: "Welcome to this AI generated podcast." },
-              { time: 5, text: "Today we're exploring the topic you requested." },
-              { time: 10, text: "Let's dive into the details." }
-            ]);
-            
-            // Add to history
-            podcastHistoryService.addToHistory({
-              jobId,
-              query: result.query,
-              status: 'COMPLETED',
-              timestamp: new Date().toISOString()
-            });
-          } else {
-            setError('This podcast is not ready yet. Please check back later.');
-          }
+          setError('This podcast is not ready yet. Please check back later.');
         }
       } catch (err) {
         console.error('Error fetching podcast:', err);
@@ -98,7 +60,6 @@ function Play() {
       
       const handleTimeUpdate = () => {
         setCurrentTime(audio.currentTime);
-        podcastHistoryService.updatePlayPosition(jobId, audio.currentTime);
         
         // Update current transcript based on time
         const currentSegment = transcript.find((segment, index) => {
@@ -114,12 +75,6 @@ function Play() {
       
       const handleLoadedMetadata = () => {
         setDuration(audio.duration);
-        
-        // Set initial position if we have a stored position
-        if (podcast.lastPosition) {
-          audio.currentTime = podcast.lastPosition;
-          setCurrentTime(podcast.lastPosition);
-        }
       };
       
       const handlePlay = () => setIsPlaying(true);
@@ -140,7 +95,7 @@ function Play() {
         audio.removeEventListener('ended', handleEnded);
       };
     }
-  }, [audioRef, podcast, jobId, transcript]);
+  }, [audioRef, podcast, transcript]);
   
   // Toggle play/pause
   const togglePlay = () => {

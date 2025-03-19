@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import podcastHistoryService from '../services/podcastHistoryService';
 
 function Browse() {
   const [podcasts, setPodcasts] = useState([]);

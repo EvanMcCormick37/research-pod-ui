@@ -23,6 +23,12 @@ function GeneratingPodcast() {
         setStatus(result.status);
         setProgress(result.progress || 0);
         
+        // If completed, navigate directly to the podcast player
+        if (result.status === 'COMPLETED') {
+          navigate(`/watch/${jobId}`);
+          return;
+        }
+        
         if (result.events_url) {
           setEventStreamUrl(result.events_url);
         } else {
@@ -36,7 +42,7 @@ function GeneratingPodcast() {
     };
     
     checkJobStatus();
-  }, [jobId]);
+  }, [jobId, navigate]);
   
   // Handle status updates from EventStreamListener
   const handleStatusUpdate = (data) => {
@@ -76,14 +82,9 @@ function GeneratingPodcast() {
   };
   
   // Function to cancel generation
-  const handleCancel = async () => {
-    try {
-      // In a real implementation, you'd have an API endpoint to cancel the job
-      // await apiService.cancelJob(jobId);
-      navigate('/');
-    } catch (err) {
-      console.error('Error canceling job:', err);
-    }
+  const handleCancel = () => {
+    // Simple navigation back to home, no history to update
+    navigate('/');
   };
   
   return (
