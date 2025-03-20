@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/evanmccormick37.github.io/research-pod-ui/static/css/main.855a0bee.css",
-    "main.js": "/evanmccormick37.github.io/research-pod-ui/static/js/main.efe08efe.js",
-    "static/js/453.d416804d.chunk.js": "/evanmccormick37.github.io/research-pod-ui/static/js/453.d416804d.chunk.js",
-    "index.html": "/evanmccormick37.github.io/research-pod-ui/index.html",
-    "main.855a0bee.css.map": "/evanmccormick37.github.io/research-pod-ui/static/css/main.855a0bee.css.map",
-    "main.efe08efe.js.map": "/evanmccormick37.github.io/research-pod-ui/static/js/main.efe08efe.js.map",
-    "453.d416804d.chunk.js.map": "/evanmccormick37.github.io/research-pod-ui/static/js/453.d416804d.chunk.js.map"
+    "main.css": "/research-pod-ui/static/css/main.855a0bee.css",
+    "main.js": "/research-pod-ui/static/js/main.626aec3c.js",
+    "static/js/453.d416804d.chunk.js": "/research-pod-ui/static/js/453.d416804d.chunk.js",
+    "index.html": "/research-pod-ui/index.html",
+    "main.855a0bee.css.map": "/research-pod-ui/static/css/main.855a0bee.css.map",
+    "main.626aec3c.js.map": "/research-pod-ui/static/js/main.626aec3c.js.map",
+    "453.d416804d.chunk.js.map": "/research-pod-ui/static/js/453.d416804d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.855a0bee.css",
-    "static/js/main.efe08efe.js"
+    "static/js/main.626aec3c.js"
   ]
 }
