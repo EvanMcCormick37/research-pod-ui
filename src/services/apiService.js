@@ -1,6 +1,6 @@
+import apiConfig from "../apiConfig";
 
-
-const API_BASE_URL = 'https://api.richardr.dev';
+const API_BASE_URL = apiConfig.apiBaseUrl;
 
 const apiService = {
     async createPodcast(query) {
